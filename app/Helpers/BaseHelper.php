@@ -26,4 +26,16 @@ class BaseHelper
             ->get();
         return $data;
     }
+
+    public static function getDummyString($prefix = 'dummy_')
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 7; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        $generate = $prefix . $randomString;
+        return $generate;
+    }
 }

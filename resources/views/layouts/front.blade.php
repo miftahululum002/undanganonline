@@ -2,22 +2,24 @@
 <html Content-Language="ID" lang="id" xml:lang="id">
 
 <head>
-    <title>{{APP_NAME }} - Online</title>
-    <link rel="icon" href="{{asset('img')}}/favicon.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{APP_NAME }} - Online</title>
+    <link rel="icon" href="{{asset('img')}}/favicon.png">
     <meta name="description" content="Undangan digital berupa website untuk pernikahanmu. Lebih praktis, keren dan kekinian.">
-    <meta name="keywords" content="Undangan digital, Website pernikahan, Undangan kekinian, Web undangan kren">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Undangan digital, Website pernikahan, Undangan kekinian, Web undangan keren">
     <meta name="theme-color" content="#005CAA" />
     <meta name="author" content="codopro.id">
 
     <!-- Required CSS -->
-    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.min.css?SIDOINIKAHV2">
-    <link rel="stylesheet" href="{{asset('css')}}/line-icons.css?SIDOINIKAHV2">
-    <link type="text/css" href="{{asset('css')}}/froala_blocks.css?SIDOINIKAHV2" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css')}}/line-icons.css">
+    <link rel="stylesheet" href="{{asset('css')}}/froala_blocks.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto">
+
+    <link rel="stylesheet" href="{{asset('css')}}/pikaday.css">
+    <link rel="stylesheet" href="{{asset('css')}}/croppie.min.css">
     @yield('style')
 </head>
 
@@ -72,7 +74,7 @@
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-footer" style="color:#fff;">&#169;2021 <a href="{{asset('')}}dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                    <p class="text-footer" style="color:#fff;">&copy;2023 - {{date('Y')}} <a href="{{asset('')}}dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
                 </div>
             </div>
         </div>
@@ -81,6 +83,13 @@
     <script src="{{asset('js')}}/jquery-min.js"></script>
     <script src="{{asset('js')}}/popper.min.js"></script>
     <script src="{{asset('js')}}/bootstrap.min.js"></script>
+    <script src="{{asset('js')}}/jquery.nav.js"></script>
+    <script src="{{asset('js')}}/jquery.easing.min.js"></script>
+    <script src="{{asset('js')}}/main.js"></script>
+    <script src="{{asset('js')}}/moment-with-locales.js"></script>
+    <script src="{{asset('js')}}/pikaday.js"></script>
+    <script src="{{asset('js')}}/dropzone.js"></script>
+    <script src="{{asset('js')}}/croppie.min.js"></script>
 </body>
 
 </html>

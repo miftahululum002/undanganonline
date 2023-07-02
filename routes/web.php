@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 
 
 /*
@@ -27,6 +28,9 @@ Route::post('/login/dologin', [LoginController::class, 'authenticate'])->name('l
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 Route::get('/order/{kode}', [OrderController::class, 'index'])->name('order.index');
+Route::get('/order/1', [OrderController::class, 'user'])->name('order.1');
+Route::match(['get', 'post'], '/order/2', [OrderController::class, 'mempelai'])->name('order.2');
+Route::match(['get', 'post'], '/order/3', [OrderController::class, 'acara'])->name('order.3');
 Route::get('/demo/{kode}', [DemoController::class, 'index'])->name('demo.index');
 Route::get('/themes', [ThemesController::class, 'index'])->name('themes.index');
 
