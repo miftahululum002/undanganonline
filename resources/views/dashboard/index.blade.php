@@ -78,7 +78,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
                             $limit = 0;
                             foreach ($join as $row) {
@@ -88,15 +87,14 @@
                                 }
 
                             ?>
-
                                 <tr>
                                     <td>#<?= $row->invoice ?></td>
-                                    <td><?= $row->username ?></td>
+                                    <td><?= $row->email ?></td>
                                     <td><a href="<?= APP_NAME . '/' . $row->domain ?>"><?= $row->domain ?></a></td>
 
-                                    <?php if ($row->statusPembayaran == '1') { ?>
+                                    <?php if ($row->status_pembayaran == '1') { ?>
                                         <td><span class="badge badge-warning">Menunggu Konfirmasi</span></td>
-                                    <?php } else if ($row->statusPembayaran == '2') { ?>
+                                    <?php } else if ($row->status_pembayaran == '2') { ?>
                                         <td><span class="badge badge-success">Lunas</span></td>
                                     <?php } else { ?>
                                         <td><span class="badge badge-secondary">Belum Lunas</span></td>
@@ -176,9 +174,8 @@
         </div>
     </div>
 </div>
-@endScetion
+@endSection
 @section('script')
-
 <script>
     //triggered when modal is about to be shown
     $('#modalData').on('show.bs.modal', function(e) {

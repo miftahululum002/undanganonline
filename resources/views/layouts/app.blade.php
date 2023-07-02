@@ -11,7 +11,7 @@
     <title><?= APP_NAME; ?> - <?= $title; ?></title>
     <link href="{{asset('vendor')}}/fontawesome-free/css/all.min.css?SIDOINIKAHV2" rel="stylesheet" type="text/css">
     <link href="{{asset('vendor')}}/bootstrap/css/bootstrap.css?SIDOINIKAHV2" rel="stylesheet" type="text/css">
-    <link href="{{asset('vendor')}}ruangadmin/css/ruang-admin.css?SIDOINIKAHV2" rel="stylesheet">
+    <link href="{{asset('vendor')}}/ruangadmin/css/ruang-admin.css?SIDOINIKAHV2" rel="stylesheet">
     <link href="{{asset('vendor')}}/datatables/dataTables.bootstrap4.min.css?SIDOINIKAHV2" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css')}}/croppie.min.css?SIDOINIKAHV2">
     <link rel="stylesheet" href="{{asset('css')}}/pikaday.css?SIDOINIKAHV2">
@@ -69,7 +69,7 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="img-profile rounded-circle" src="{{asset('img')/boy.png" style="max-width: 60px">
+                                <img class="img-profile rounded-circle" src="{{asset('img')}}/boy.png" style="max-width: 60px">
                                 <span class="ml-2 d-none d-lg-inline text-white small">Nama User</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -79,25 +79,25 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{route('login.logout')}}"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                            </a>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                @yield('content')
+
             </div>
-            </li>
-            </ul>
-            </nav>
-            @yield('content')
 
-        </div>
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <p class="text-footer">&#169;2021 <a href="{{route('index')}}" rel="dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <p class="text-footer">&#169;2021 <a href="{{route('index')}}" rel="dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                    </div>
                 </div>
-            </div>
-        </footer>
-        <!-- Footer -->
-    </div>
+            </footer>
+            <!-- Footer -->
+        </div>
 
     </div>
 
