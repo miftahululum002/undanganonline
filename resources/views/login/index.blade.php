@@ -16,6 +16,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Login</h1>
                             </div>
                             <form method="post" action="{{route('login.proses')}}" class="user">
+                                @csrf
                                 <div class="form-group">
                                     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" name="email">
                                 </div>
