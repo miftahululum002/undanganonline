@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="{{asset('css')}}/pikaday.css">
     <link rel="stylesheet" href="{{asset('css')}}/croppie.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('style')
 </head>
 
@@ -59,7 +60,8 @@
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-footer" style="color:#fff;">&#169;2021 <a href="{{route('index')}}" rel="dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
+                    <p class="text-footer" style="color:#fff;">
+                        &copy;2021 <a href="{{route('index')}}" rel="dofollow" target="_blank"><?= APP_NAME ?></a> - <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a>.</p>
                 </div>
             </div>
         </div>
@@ -99,6 +101,8 @@
 
 </html>
 <script type="text/javascript">
+    let token = $('meta[name="csrf-token"]').attr('content');
+
     function nospaces(t) {
         if (t.value.match(/\s/g)) {
             t.value = t.value.replace(/\s/g, '');
@@ -110,13 +114,11 @@
         /** croppie shareurcodes.com **/
         var croppie = null;
         var el = document.getElementById('resizer');
-
         $.base64ImageToBlob = function(str) {
             /** extract content type and base64 payload from original string **/
             var pos = str.indexOf(';base64,');
             var type = str.substring(5, pos);
             var b64 = str.substr(pos + 8);
-
             /* decode base64 */
             var imageContent = atob(b64);
 
@@ -174,10 +176,10 @@
                 $("#myModal").modal("hide");
                 $("#profile-pic").attr("src", "/images/ajax-loader.gif");
 
-                var url = "order/imgupload";
+                var url = "{{route('order.imgupload')}}";
                 var formData = new FormData();
                 formData.append("foto_" + fotonyasiapa, $.base64ImageToBlob(base64));
-
+                formData.append("_token", token);
                 $.ajax({
                     type: 'POST',
                     url: url,

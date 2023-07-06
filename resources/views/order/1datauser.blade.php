@@ -25,19 +25,19 @@
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Email</label>
-								<input name="email" type="email" class="form-control" placeholder="Email" value="<?= $order['email'] ?>" required>
+								<input name="email" type="email" class="form-control" placeholder="Email" value="<?= !empty($order['email']) ? $order['email'] : null ?>" required>
 							</div>
 						</div>
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Password</label>
-								<input name="password" type="text" class="form-control" placeholder="Password" value="<?= $order['password'] ?>" required>
+								<input name="password" type="text" class="form-control" placeholder="Password" value="<?= !empty($order['password']) ? $order['email'] : null ?>" required>
 							</div>
 						</div>
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nomer HP / WhatsApp</label>
-								<input name="hp" type="number" class="form-control" placeholder="0" value="<?= $order['hp'] ?>" required>
+								<input name="hp" type="number" class="form-control" placeholder="0" value="<?= !empty($order['hp']) ? $order['hp'] : null ?>" required>
 							</div>
 						</div>
 						<div class="row justify-content-start mt-4">

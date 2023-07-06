@@ -27,8 +27,9 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login/dologin', [LoginController::class, 'authenticate'])->name('login.proses');
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
-Route::get('/order/{kode}', [OrderController::class, 'index'])->name('order.index');
+Route::get('/order/theme/{kode}', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/1', [OrderController::class, 'user'])->name('order.1');
+Route::post('/order/imgupload', [OrderController::class, 'imgUpload'])->name('order.imgupload');
 Route::match(['get', 'post'], '/order/2', [OrderController::class, 'mempelai'])->name('order.2');
 Route::match(['get', 'post'], '/order/3', [OrderController::class, 'acara'])->name('order.3');
 Route::get('/demo/{kode}', [DemoController::class, 'index'])->name('demo.index');

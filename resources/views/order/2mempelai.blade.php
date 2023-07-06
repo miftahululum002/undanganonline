@@ -26,23 +26,22 @@
 							<div class="col mt-2">
 								<label>Foto </label>
 								<div class="upload-area-bg" style="text-align: center;">
-
 									<div class="col">
 										<div class="row">
 											<div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
 												<div class="upload-area" style="height: 100%;padding: 5px 5px;">
 													<?php
 													$fotogroom = "/assets/base/img/groom.png";
-													$generate = $_SESSION['dummy'];
-													if (isset($_SESSION['foto_groom'])) {
-														if ($_SESSION['foto_groom'] != '' || $_SESSION['foto_groom'] != 0) {
+													$generate = session('dummy');
+													$grom = session('foto_groom');
+													if (!empty($grom)) {
+														if ($grom != '' || $grom != 0) {
 															$fotogroom = "/assets/users/" . $generate . "/groom.png";
 														}
 													}
 													?>
-													<img src="<?= base_url() ?><?= $fotogroom ?>" id="profile-pic-groom" style='border-radius: 5px;height: 200px;width: 200px;'>
+													<img src="{{asset($fotogroom)}}" id="profile-pic-groom" style='border-radius: 5px;height: 200px;width: 200px;'>
 												</div>
-
 											</div>
 											<div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center mt-3">
 												<div class="btn btn-dark">
@@ -54,32 +53,31 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="row align-items-center">
 							<div class="col">
 								<label>Nama Lengkap</label>
-								<input name="nama_lengkap_pria" type="text" class="form-control" placeholder="Contoh : Jack Dawson S.Kom" value="<?php if (isset($_SESSION['nama_lengkap_pria'])) echo $_SESSION['nama_lengkap_pria']; ?>" required>
+								<input name="nama_lengkap_pria" type="text" class="form-control" placeholder="Contoh : Jack Dawson S.Kom" value="<?= session('nama_lengkap_pria') ? session('nama_lengkap_pria') : null ?>" required>
 							</div>
 						</div>
 
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Panggilan</label>
-								<input name="nama_panggilan_pria" type="text" class="form-control" placeholder="Contoh : Jack" value="<?php if (isset($_SESSION['nama_panggilan_pria'])) echo $_SESSION['nama_panggilan_pria']; ?>" required>
+								<input name="nama_panggilan_pria" type="text" class="form-control" placeholder="Contoh : Jack" value="<?= session('nama_panggilan_pria') ? session('nama_panggilan_pria') : null ?>" required>
 							</div>
 						</div>
 
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Ayah</label>
-								<input name="nama_ayah_pria" type="text" class="form-control" placeholder="Nama Ayah" value="<?php if (isset($_SESSION['nama_ayah_pria'])) echo $_SESSION['nama_ayah_pria']; ?>" required>
+								<input name="nama_ayah_pria" type="text" class="form-control" placeholder="Nama Ayah" value="<?= session('nama_ayah_pria') ? session('nama_ayah_pria') : null ?>" required>
 							</div>
 						</div>
 
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Ibu</label>
-								<input name="nama_ibu_pria" type="text" class="form-control" placeholder="Nama Ibu" value="<?php if (isset($_SESSION['nama_ibu_pria'])) echo $_SESSION['nama_ibu_pria']; ?>" required>
+								<input name="nama_ibu_pria" type="text" class="form-control" placeholder="Nama Ibu" value="<?= session('nama_ibu_pria') ? session('nama_ibu_pria') : null ?>" required>
 							</div>
 						</div>
 						<hr>
@@ -91,21 +89,18 @@
 								<div class="upload-area-bg" style="text-align: center;">
 									<?php
 									$fotobride = "/assets/base/img/bride.png";
-									$generate = $_SESSION['dummy'];
-									if (isset($_SESSION['foto_bride'])) {
-
-										if ($_SESSION['foto_bride'] != 0 || $_SESSION['foto_bride'] != '') {
+									$generate = session('dummy');
+									if (session('foto_bride')) {
+										if (session('foto_bride') != 0 || session('foto_bride') != '') {
 											$fotobride = "/assets/users/" . $generate . "/bride.png";
 										}
 									}
-
-
 									?>
 									<div class="col">
 										<div class="row">
 											<div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
 												<div class="upload-area" style="height: 100%;padding: 5px 5px;">
-													<img src="<?= base_url() ?><?= $fotobride ?>" id="profile-pic-bride" style='border-radius: 5px;height: 200px;width: 200px;'>
+													<img src="{{asset($fotobride)}}" id="profile-pic-bride" style='border-radius: 5px;height: 200px;width: 200px;'>
 												</div>
 											</div>
 											<div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center mt-3">
@@ -122,21 +117,21 @@
 						<div class="row align-items-center">
 							<div class="col">
 								<label>Nama Lengkap</label>
-								<input name="nama_lengkap_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah Az Zahra" value="<?php if (isset($_SESSION['nama_lengkap_wanita'])) echo $_SESSION['nama_lengkap_wanita']; ?>" required>
+								<input name="nama_lengkap_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah Az Zahra" value="<?= session('nama_lengkap_wanita') ? session('nama_lengkap_wanita') : null ?>" required>
 							</div>
 						</div>
 
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Panggilan</label>
-								<input name="nama_panggilan_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah" value="<?php if (isset($_SESSION['nama_panggilan_wanita'])) echo $_SESSION['nama_panggilan_wanita']; ?>" required>
+								<input name="nama_panggilan_wanita" type="text" class="form-control" placeholder="Contoh : Fatimah" value="<?= session('nama_panggilan_wanita') ? session('nama_panggilan_wanita') : null ?>" required>
 							</div>
 						</div>
 
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Ayah</label>
-								<input name="nama_ayah_wanita" type="text" class="form-control" placeholder="Nama Ayah" value="<?php if (isset($_SESSION['nama_ayah_wanita'])) echo $_SESSION['nama_ayah_wanita']; ?>" required>
+								<input name="nama_ayah_wanita" type="text" class="form-control" placeholder="Nama Ayah" value="<?= session('nama_ayah_wanita') ? session('nama_ayah_wanita') : null ?>" required>
 
 							</div>
 						</div>
@@ -144,7 +139,7 @@
 						<div class="row align-items-center mt-3">
 							<div class="col">
 								<label>Nama Ibu</label>
-								<input name="nama_ibu_wanita" type="text" class="form-control" placeholder="Nama Ibu" value="<?php if (isset($_SESSION['nama_ibu_wanita'])) echo $_SESSION['nama_ibu_wanita']; ?>" required>
+								<input name="nama_ibu_wanita" type="text" class="form-control" placeholder="Nama Ibu" value="<?= session('nama_ibu_wanita') ? session('nama_ibu_wanita') : null ?>" required>
 
 							</div>
 						</div>
@@ -162,14 +157,14 @@
 												<div class="upload-area" style="height: 100%;padding: 5px 5px;">
 													<?php
 													$fotosampul = "/assets/base/img/kita.png";
-													$generate = $_SESSION['dummy'];
-													if (isset($_SESSION['foto_sampul'])) {
-														if ($_SESSION['foto_sampul'] != '' || $_SESSION['foto_sampul'] != 0) {
+													$generate = session('dummy');
+													if (session('foto_sampul')) {
+														if (session('foto_sampul') != '' || session('foto_sampul') != 0) {
 															$fotosampul = "/assets/users/" . $generate . "/kita.png";
 														}
 													}
 													?>
-													<img src="<?= base_url() ?><?= $fotosampul ?>" id="profile-pic-sampul" style='border-radius: 5px;height: 200px;width: 200px;'>
+													<img src="{{asset($fotosampul)}}" id="profile-pic-sampul" style='border-radius: 5px;height: 200px;width: 200px;'>
 												</div>
 
 											</div>
@@ -189,7 +184,7 @@
 								<div class="row">
 
 									<div class="col-auto">
-										<a href="<?= base_url('order/1'); ?>" class="btn btn-secondary btn-order">Kembali</a>
+										<a href="{{route('order.1')}}" class="btn btn-secondary btn-order">Kembali</a>
 									</div>
 									<div class="col">
 										<input name="submit" type="submit" class="btn btn-primary btn-order btn-block" style="background-color: #005CAA;" value="Lanjut">
@@ -198,8 +193,6 @@
 							</div>
 						</div>
 					</form>
-
-
 				</div>
 			</div>
 		</div>
